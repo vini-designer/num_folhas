@@ -22,7 +22,7 @@
                 </div>-->
             </div>
             <div style="display: flex; justify-content: center;">
-                <input class="form-control" type="file" id="form_file_1" onchange="add_fields(this)" style="width: 280px; margin-top: 10px; margin-bottom: 20px;">
+                <input class="form-control" type="file" id="form_file_1" onchange="add_field(this)" style="width: 280px; margin-top: 10px; margin-bottom: 20px;">
             </div>
         </div>
 
@@ -55,11 +55,11 @@ function novo_arq(){
     var div_arq = document.createElement("DIV");
     contador_arq+=1;
 
-    div_arq.innerHTML = '<div id="container_fls_' + contador_arq.toString() + '" style="display: grid; grid-template-columns: repeat(7, 35px); justify-content: center; row-gap: 5px; column-gap: 5px;"></div><div style="display: flex; justify-content: center;"><input class="form-control" type="file" id="form_file_' + contador_arq.toString() + '" onchange="add_fields(this)" style="width: 280px; margin-top: 10px; margin-bottom: 20px;"></div>';
+    div_arq.innerHTML = '<div id="container_fls_' + contador_arq.toString() + '" style="display: grid; grid-template-columns: repeat(7, 35px); justify-content: center; row-gap: 5px; column-gap: 5px;"></div><div style="display: flex; justify-content: center;"><input class="form-control" type="file" id="form_file_' + contador_arq.toString() + '" onchange="add_field(this)" style="width: 280px; margin-top: 10px; margin-bottom: 20px;"></div>';
     document.getElementById("container_arq").appendChild(div_arq);
 }
 
-function add_fields(pdf_file){
+function add_field(pdf_file){
     var reader = new FileReader();
     var num_file = pdf_file.id.charAt(pdf_file.id.length -  1);
     document.getElementById("container_fls_" + num_file).innerText = "";
